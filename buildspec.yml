@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo INSTALL Commands ------------------------------------------------
+      - echo Nothing to do in the install phase...
+  pre_build:
+    commands:
+      - echo PRE BUILD Commands ----------------------------------------------
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo BUILD Commands --------------------------------------------------
+      - npm install
+      - ls
+      - npm run build
+      - npm test
+      - cp build/app.js .
+      - ls
+      - echo build commands done
+  post_build:
+    commands:
+      - echo POST BUILD Commands ---------------------------------------------
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
